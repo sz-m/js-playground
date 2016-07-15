@@ -53,3 +53,25 @@ display(ponny.name+' is '+ponny.color+' hamster.');
 
 display('More info about '+ponny.name);
 display(ponny);
+
+// ------------------------------------------
+// es6
+
+class Bird {
+	constructor(name, color) {
+		this.name = name;
+		this.color = color;
+	}
+
+	speak() {
+		display('pi pi?');
+	}
+}
+
+var red = new Bird('Red', 'Red');
+
+display(red.name+' is '+red.color+' bird.');
+red.speak();
+
+display('More info about '+red.name);
+display(red);
