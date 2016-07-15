@@ -29,3 +29,27 @@ display(rex.speak());
 
 display('More info about '+rex.name);
 display(rex);
+
+// ------------------------------------------
+
+var ponny = 
+Object.create(Object.prototype,
+	{
+		name: {
+			value: 'Ponny',
+			enumerable: true,
+			writable: true,
+			configurable: true,
+		},
+		color: {
+			value: 'Brown',
+			enumerable: true,
+			writable: true,
+			configurable: true,
+		},
+	})
+
+display(ponny.name+' is '+ponny.color+' hamster.');
+
+display('More info about '+ponny.name);
+display(ponny);
