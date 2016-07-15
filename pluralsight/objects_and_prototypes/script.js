@@ -1,5 +1,15 @@
 'use strict';
 
-var cat = {name: 'Fluffy', color: 'White'};
+var cat = {
+	name: 'Fluffy',
+	color: 'White',
+	speak: function() { display('Meeeeoow'); },
+};
 
-display(cat.name);
+cat.eyes = 'green';
+
+display('Fluffy is '+cat.color+' cat.');
+display(cat.speak());
+
+display('More info about ' + cat.name +':');
+display(cat);
