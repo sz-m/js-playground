@@ -75,3 +75,28 @@ red.speak();
 
 display('More info about '+red.name);
 display(red);
+
+// ------------------------------------------
+
+red['size'] = 'small';
+display('getOwnPropertyDescriptor(red, size)');
+display(Object.getOwnPropertyDescriptor(red, 'size'));
+
+Object.defineProperty(red, 'size', {writable: false});
+
+// Uncaught TypeError: Cannot assign to read only property 'size' of object '#<Bird>'
+// red['size'] = 'xxl';
+
+// but this one is ok.
+red['size.x'] = 'aaa';
+display('getOwnPropertyDescriptor(red, size.x)');
+display(Object.getOwnPropertyDescriptor(red, 'size.x'));
+
+// and now it's not ok
+Object.freeze(red.size);
+red['size.x'] = 'yyy';
+display('getOwnPropertyDescriptor(red, size.x)');
+display(Object.getOwnPropertyDescriptor(red, 'size.x'));
+
+display('getOwnPropertyDescriptor(red, size)');
+display(Object.getOwnPropertyDescriptor(red, 'size'));
