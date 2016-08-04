@@ -1,9 +1,8 @@
 class HelloWorld {
-	constructor(public message: string) {
-		console.log('Hello', message);
-	}
+	constructor(public message: string) {}
 }
 
-var hello = new HelloWorld('TypeScript');
+var hello = new HelloWorld('Hello TypeScript');
 
 console.log(hello);
+console.log(hello.message);
