@@ -1,8 +1,8 @@
 function GetAllBooks() {
 	let books = [
-		{title: 'Pinokio', author: 'Carlo Collodi', avaible: true},
-		{title: 'Akademia pana Kleksa', author: 'Jan Brzechwa', avaible: true},
-		{title: 'Muminki atakuja', author: 'Autor nieznany', avaible: false},
+		{title: 'Pinokio', author: 'Carlo Collodi', avaible: true, category: Category.Children},
+		{title: 'Akademia pana Kleksa', author: 'Jan Brzechwa', avaible: true, category: Category.Children},
+		{title: 'Muminki atakuja', author: 'Autor nieznany', avaible: false, category: Category.Fiction},
 	];
 
 	return books;
@@ -25,6 +25,8 @@ function LogFirstAvaible(books) : void {
 		console.log('First avaible:', firstAvaible) :
 		console.log('No books avaible.');
 }
+
+enum Category {Biography, Fiction, Children, Poetry, History};
 
 const allBooks = GetAllBooks();
 const firstAvaible = LogFirstAvaible(allBooks);
