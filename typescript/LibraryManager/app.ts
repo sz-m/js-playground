@@ -28,5 +28,25 @@ function LogFirstAvaible(books) : void {
 
 enum Category {Biography, Fiction, Children, Poetry, History};
 
-const allBooks = GetAllBooks();
-const firstAvaible = LogFirstAvaible(allBooks);
+function GetBookTitlesByCategory(categoryFilter: Category) : Array<string> {
+	console.log('Getting book in category:', categoryFilter, Category[categoryFilter]);
+
+	const allBooks = GetAllBooks();
+	const titles: string[] = [];
+
+	for(let book of allBooks) {
+		if(book.category == categoryFilter)
+			titles.push(book.title);
+	}
+
+	return titles;
+}
+
+function LogBookTitles(titles: Array<string>) : void {
+	for(let title of titles) {
+		console.log(title);
+	}
+}
+
+const childrenBooks = GetBookTitlesByCategory(Category.Children);
+LogBookTitles(childrenBooks);
