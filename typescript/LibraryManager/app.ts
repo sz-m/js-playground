@@ -28,7 +28,7 @@ function LogFirstAvaible(books) : void {
 
 enum Category {Biography, Fiction, Children, Poetry, History};
 
-function GetBookTitlesByCategory(categoryFilter: Category) : Array<string> {
+function GetBookTitlesByCategory(categoryFilter: Category = Category.Fiction) : Array<string> {
 	console.log('Getting book in category:', categoryFilter, Category[categoryFilter]);
 
 	const allBooks = GetAllBooks();
@@ -58,7 +58,7 @@ function CreateCustomerID(name: string, id: number): string {
 }
 
 // function types
-let IdGenerator = (chars: string, num: number) => string;
+let IdGenerator: (chars: string, num: number) => string;
 IdGenerator = CreateCustomerID;
 
 console.log('IdGenerator: ', IdGenerator('michal', 404));
@@ -68,3 +68,8 @@ const childrenBooks = GetBookTitlesByCategory(Category.Children);
 // LogBookTitles(childrenBooks);
 childrenBooks.forEach((val, idx, array) => console.log(++idx + ' - ' + val));
 console.log('GetBookByID(1).title: ' + GetBookByID(1).title);
+
+
+console.log('Fiction books:');
+const fictionBooks = GetBookTitlesByCategory();
+fictionBooks.forEach(title => console.log(title));
