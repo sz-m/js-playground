@@ -1,8 +1,8 @@
 function GetAllBooks() {
 	let books = [
-		{title: 'Pinokio', author: 'Carlo Collodi', avaible: true, category: Category.Children},
-		{title: 'Akademia pana Kleksa', author: 'Jan Brzechwa', avaible: true, category: Category.Children},
-		{title: 'Muminki atakuja', author: 'Autor nieznany', avaible: false, category: Category.Fiction},
+		{id: 1, title: 'Pinokio', author: 'Carlo Collodi', avaible: true, category: Category.Children},
+		{id: 2, title: 'Akademia pana Kleksa', author: 'Jan Brzechwa', avaible: true, category: Category.Children},
+		{id: 3, title: 'Muminki atakuja', author: 'Autor nieznany', avaible: false, category: Category.Fiction},
 	];
 
 	return books;
@@ -48,5 +48,12 @@ function LogBookTitles(titles: Array<string>) : void {
 	}
 }
 
+function GetBookByID(id: number) {
+	const allBooks = GetAllBooks();
+	return allBooks.filter(book => book.id === id)[0];
+}
+
 const childrenBooks = GetBookTitlesByCategory(Category.Children);
-LogBookTitles(childrenBooks);
+// LogBookTitles(childrenBooks);
+childrenBooks.forEach((val, idx, array) => console.log(++idx + ' - ' + val));
+console.log('GetBookByID(1).title: ' + GetBookByID(1).title)
