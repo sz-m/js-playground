@@ -57,12 +57,21 @@ function CreateCustomerID(name: string, id: number): string {
 	return name + ' ' + id;
 }
 
+function CreateCustomer(name: string, age?: number, city?: string) {
+	console.log('Name ' + name);
+	if(age) console.log('Age: ' + age);
+	if(city) console.log('City: ' + city);
+}
+
 // function types
 let IdGenerator: (chars: string, num: number) => string;
 IdGenerator = CreateCustomerID;
 
 console.log('IdGenerator: ', IdGenerator('michal', 404));
 
+
+// optional parameter
+CreateCustomer("Michal");
 
 const childrenBooks = GetBookTitlesByCategory(Category.Children);
 // LogBookTitles(childrenBooks);
