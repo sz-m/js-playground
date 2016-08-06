@@ -58,9 +58,24 @@ function CreateCustomerID(name: string, id: number): string {
 }
 
 function CreateCustomer(name: string, age?: number, city?: string) {
-	console.log('Name ' + name);
+	console.log('Name: ' + name);
 	if(age) console.log('Age: ' + age);
 	if(city) console.log('City: ' + city);
+}
+
+function CheckoutBooks(name: string, ...booksID: Array<number>): Array<string> {
+	console.log("Checking books for " + name);
+
+	let avaibleTitles: Array<string> = [];
+
+	for(let id of booksID) {
+		let book = GetBookByID(id);
+		
+		if(book.avaible)
+			avaibleTitles.push(book.title);
+	}
+
+	return avaibleTitles;
 }
 
 // function types
@@ -71,7 +86,12 @@ console.log('IdGenerator: ', IdGenerator('michal', 404));
 
 
 // optional parameter
-CreateCustomer("Michal");
+CreateCustomer("Michal", 10);
+
+// rest parameters
+let myBooks: Array<string> = CheckoutBooks('Morfik', 1, 2);
+myBooks.forEach(title => console.log(title));
+
 
 const childrenBooks = GetBookTitlesByCategory(Category.Children);
 // LogBookTitles(childrenBooks);
