@@ -83,6 +83,18 @@ function PrintBook(book: Book): void {
 	console.log(book.title + ' by ' + book.author);
 }
 
+// duck typing
+let myBook = {
+	id: 101,
+	title: '101 dalmatenczykow',
+	author: 'Diego',
+	category: Category.Children,
+	avaible: true,
+	year: 1998,
+	copies: 2,
+};
+PrintBook(myBook);
+
 // function types
 let IdGenerator: (chars: string, num: number) => string;
 IdGenerator = CreateCustomerID;
