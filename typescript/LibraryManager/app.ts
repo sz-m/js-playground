@@ -26,8 +26,6 @@ function LogFirstAvaible(books) : void {
 		console.log('No books avaible.');
 }
 
-enum Category {Biography, Fiction, Children, Poetry, History};
-
 function GetBookTitlesByCategory(categoryFilter: Category = Category.Fiction) : Array<string> {
 	console.log('Getting book in category:', categoryFilter, Category[categoryFilter]);
 
@@ -102,3 +100,7 @@ console.log('GetBookByID(1).title: ' + GetBookByID(1).title);
 console.log('Fiction books:');
 const fictionBooks = GetBookTitlesByCategory();
 fictionBooks.forEach(title => console.log(title));
+
+interface Action {
+	execute: (parameters: string) => void;
+}
