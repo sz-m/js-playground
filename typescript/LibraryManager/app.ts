@@ -1,4 +1,7 @@
-function GetAllBooks() {
+import {Category} from './enums';
+import {Book} from './interfaces';
+
+function GetAllBooks(): Book[]  {
 	let books = [
 		{id: 1, title: 'Pinokio', author: 'Carlo Collodi', avaible: true, category: Category.Children},
 		{id: 2, title: 'Akademia pana Kleksa', author: 'Jan Brzechwa', avaible: true, category: Category.Children},
@@ -46,7 +49,7 @@ function LogBookTitles(titles: Array<string>) : void {
 	}
 }
 
-function GetBookByID(id: number) {
+function GetBookByID(id: number): Book {
 	const allBooks = GetAllBooks();
 	return allBooks.filter(book => book.id === id)[0];
 }
@@ -74,6 +77,10 @@ function CheckoutBooks(name: string, ...booksID: Array<number>): Array<string> {
 	}
 
 	return avaibleTitles;
+}
+
+function PrintBook(book: Book): void {
+	console.log(book.title + ' by ' + book.author);
 }
 
 // function types
