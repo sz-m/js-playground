@@ -6,6 +6,11 @@ interface Book {
 	author: string;
 	avaible: boolean;
 	category: Category;
+	markDamaged?: DamageLogger;
+}
+
+interface DamageLogger {
+	(reason: string): void;
 }
 
 export {Book};
