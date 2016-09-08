@@ -1,7 +1,7 @@
 {
   "author": "sz-m",
   "name": "censorify_xyz_eqx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cenzuruje słowa w tekście",
   "main": "censortext",
   "repository": {
