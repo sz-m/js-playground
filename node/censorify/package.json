@@ -1,0 +1,16 @@
+{
+  "author": "sz-m",
+  "name": "censorify_xyz_eqx",
+  "version": "0.0.1",
+  "description": "Cenzuruje słowa w tekście",
+  "main": "censortext",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bwdayley/nodebook/tree/master/ch03/censorify"
+  },
+  "keywords": ["censor", "words"],
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
